@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cvtrApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="CoffeeCup HTML Editor (www.coffeecup.com)">
+    <meta name="dcterms.created" content="Fri, 25 Nov 2016 02:42:57 GMT">
+    <meta name="description" content="currency converter widget">
+    <meta name="keywords" content=""> 
+    <title>Currency Converter</title>
+    
+	<link rel="stylesheet" media="screen" href="css/main.css" />
+    <style type="text/css">
+    <!--
+    body {
+      color:#000000;
+      background-color:#FFFFFF;
+      background-image:url('Background Image');
+      background-repeat:no-repeat;
+    }
+    a  { color:#0000FF; }
+    a:visited { color:#800080; }
+    a:hover { color:#008000; }
+    a:active { color:#FF0000; }
+    -->
+    </style>
+    <!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	
+	<script src="lib/angular/angular.min.js"></script>
+	<script src="lib/angular-resource/angular-resource.min.js"></script>
+	<script src="app/app.module.js"></script>
+	<script src="app/cvtr.component.js"></script> 
+	<script src="app/cvtr.service.js"></script>
+	<script type='text/ng-template' id='currency-converter-tpl'>
+
+  		<div class="container1">
+		<div class="container2">
+			 <p>Currency Converter</p>
+			 
+			 <div>
+			 	  <div>Type in amount and select currency:</div>
+			 	  <table>
+				  		 <tr>
+						 	 <td><input type="number" placeholder="1" class="styled-input" ng-model="$ctrl.inputCurrency.amount" ng-change="$ctrl.calculate()"></td>
+							 <td>
+							 	 <div class="selectdiv">
+    							 	 <select ng-model="$ctrl.inputCurrency.symbol" ng-change="$ctrl.calculate()">
+									 
+    								 		 <option value="{{currency}}" ng-repeat="currency in $ctrl.currencyList">{{currency}}</option>
+											 
+    								 </select> 
+								 </div>
+							 </td>
+						 </tr> 
+				  </table>
+			 </div> 
+			 <p></p>
+			 <div>
+			 	  <div>Converted Amount:</div>
+			 	  <table>
+				  		 <tr>
+						 	 <td><input type="text" placeholder="1" class="styled-input" ng-model="$ctrl.cvtedCurrency.amount"></td>
+							 <td>
+							 	 <div class="selectdiv">
+    							 	 <select ng-model="$ctrl.cvtedCurrency.symbol" ng-change="$ctrl.calculate()">
+											<option value="{{currency}}" ng-repeat="currency in $ctrl.currencyList">{{currency}}</option>
+    								 </select>
+								 </div>
+							 </td>
+						 </tr>
+				  </table>
+			 </div>
+			 </div>
+		</div>
+</script>
+	
+  </head>
+  <body>
+  
+<!--  <strong>The lucky number {{3 + 4}}.</strong> -->
+  		<currency-converter></currency-converter>
+  </body>
+</html>
