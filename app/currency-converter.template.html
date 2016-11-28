@@ -1,0 +1,41 @@
+
+  		<div class="container1">
+		<div class="container2">
+			 <p>Currency Converter</p>
+			 
+			 <div>
+			 	  <div>Type in amount and select currency:</div>
+			 	  <table>
+				  		 <tr>
+						 	 <td><input type="number" placeholder="1" class="styled-input" ng-model="$ctrl.inputCurrency.amount" ng-change="$ctrl.calculate()"></td>
+							 <td>
+							 	 <div class="selectdiv">
+    							 	 <select ng-model="$ctrl.inputCurrency.symbol" ng-change="$ctrl.calculate()">
+									 
+    								 		 <option value="{{currency}}" ng-repeat="currency in $ctrl.currencyList">{{currency}}</option>
+											 
+    								 </select> 
+								 </div>
+							 </td>
+						 </tr> 
+				  </table>
+			 </div> 
+			 <p></p>
+			 <div>
+			 	  <div>Converted Amount:</div>
+			 	  <table>
+				  		 <tr>
+						 	 <td><input type="text" placeholder="1" class="styled-input" ng-model="$ctrl.cvtedCurrency.amount"></td>
+							 <td>
+							 	 <div class="selectdiv">
+    							 	 <select ng-model="$ctrl.cvtedCurrency.symbol" ng-change="$ctrl.calculate()">
+											<option value="{{currency}}" ng-repeat="currency in $ctrl.currencyList">{{currency}}</option>
+    								 </select>
+								 </div>
+							 </td>
+						 </tr>
+				  </table>
+			 </div>
+			 </div>
+		</div>
+ 
